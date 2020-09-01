@@ -13,7 +13,7 @@ The idea is, *very basically*, try to *guess* if it's worth to transfer to a Bra
 
 ## Endpoints
 
-`/exchange/from/to` - Use Open Exchange API to output FIAT prices. Using `btc`and `brl`as parameters, it will use Mercado Bitcoin's API for the last price.
+`/exchange/:from/:to` - Use Open Exchange API to output FIAT prices. Using `btc`and `brl`as parameters, it will use Mercado Bitcoin's API for the last exchange price.
 
 `/worthit` - Will output the "worthness" of moving your BTC to Mercado Bitcoin.
 
