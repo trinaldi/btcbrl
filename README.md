@@ -1,6 +1,6 @@
 # BTC/BRL: Worth it?
 
-WIP
+Do you ever wonder if you should keep your BTC abroad or not? Here's the 'answer'.
 
 ## Rationale
 
@@ -30,6 +30,7 @@ The idea is, *very basically*, try to *guess* if it's worth to transfer to a Bra
 ## WIP
 
 This is a Work In Progress project.
+Wanna help? That'd be awesome!
 
 ## Again
 
