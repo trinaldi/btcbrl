@@ -53,7 +53,10 @@ router.get('/exchange/:from/:to', (req, res) => {
 
 })
 
-app.use('/worthit', (req, res) => {
+app.use('/worthit/:amount', (req, res) => {
+  const btcFee = 0.0005;
+  let amount = parseFloat(req.params.amount);
+
   let btcUrl = `https://www.bitstamp.net/api/v2/ticker/btcusd`;
   let btcUsdUrl = `https://openexchangerates.org/api/latest.json?app_id=${process.env.APP_ID}&usd&symbols=brl`;
   let btcBrlUrl = 'https://www.mercadobitcoin.net/api/BTC/ticker/'
@@ -67,9 +70,16 @@ app.use('/worthit', (req, res) => {
     let usd = await usdQuote;
     let brl = await brlQuote;
 
-    let btcusd = btc.last * usd.rates.BRL;
-    console.log(btcusd);
-    console.log(brl.ticker.last);
+    let realBtc = parseFloat(amount - btcFee);
+
+    let btcUsd = (realBtc * parseFloat(btc.last)) * parseFloat(usd.rates.BRL);
+    let btcBrl = realBtc * parseFloat(brl.ticker.last);
+
+    // Please don't calculate float like this
+    // Please
+    let diff = btcBrl - btcUsd;
+
+    diff >= 0 ? res.send("1") : res.send("0");
   })()
 
 })
