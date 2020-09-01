@@ -1,0 +1,21 @@
+{
+  "name": "usdbtcbrl",
+  "version": "0.0.1",
+  "description": "Calculate the fees between BTC trades between Bitstamp and MercadoBitcoin, taking into account USD/BRL exchange.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon --ignore public"
+  },
+  "author": "Tiago Rinaldi",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.8.33",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.1.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {}
+}
